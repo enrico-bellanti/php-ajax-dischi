@@ -1,0 +1,30 @@
+.disc-wrapper{
+  display: flex;
+  padding-top: 100px;
+  background-color: #1e2d3b;
+  .disc-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(240px * 4);
+    margin: auto;
+    list-style: none;
+    & li{
+      width: 200px;
+      height: 350px;
+      margin: 20px;
+      padding: 15px;
+      text-align: center;
+      background-color: #2e3a46;
+      & img{
+        width: 170px;
+      }
+      & h4{
+        margin: 15px 0;
+        color: #fff;
+      }
+      & p{
+        color: #666666;
+      }
+    }
+  }
+}
