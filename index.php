@@ -1,5 +1,4 @@
 <?php include "db.php" ; ?>
-<?php echo($database); ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -18,12 +17,14 @@
     <main>
       <div class="disc-wrapper">
         <ul class="disc-list">
+          <?php foreach ($database as $value) { ?>
           <li class="disc">
-            <img src="" alt="">
-            <h4></h4>
-            <p></p>
-            <p></p>
+            <img src="<?php echo($value["poster"]); ?>" alt="">
+            <h4><?php echo($value["title"]); ?></h4>
+            <p><?php echo($value["author"]); ?></p>
+            <p><?php echo($value["year"]); ?></p>
           </li>
+        <?php } ?>
         </ul>
       </div>
     </main>
