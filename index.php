@@ -10,23 +10,32 @@
     <link rel="stylesheet" href="dist/app.css">
   </head>
   <body>
+    <!-- HEADER -->
     <header>
-
+      <div class="container">
+        <div class="logo">
+          <img src="img/1200px-Spotify_logo_without_text.svg.webp" alt="">
+        </div>
+      </div>
     </header>
+    <!-- /HEADER -->
 
+    <!-- vetrina dischi -->
     <main>
       <div class="disc-wrapper">
         <ul class="disc-list">
-          <?php foreach ($database as $value) { ?>
+          <?php foreach ($database as $cd) { ?>
           <li class="disc">
-            <img src="<?php echo($value["poster"]); ?>" alt="">
-            <h4><?php echo($value["title"]); ?></h4>
-            <p><?php echo($value["author"]); ?></p>
-            <p><?php echo($value["year"]); ?></p>
+            <img src="<?php echo($cd["poster"]); ?>" alt="">
+            <h4><?php echo($cd["title"]); ?></h4>
+            <p><?php echo($cd["author"]); ?></p>
+            <p><?php echo($cd["year"]); ?></p>
           </li>
         <?php } ?>
         </ul>
       </div>
     </main>
+    <!-- /vetrina dischi -->
+
   </body>
 </html>

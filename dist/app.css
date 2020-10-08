@@ -7,6 +7,24 @@
   font-family: "Roboto", sans-serif;
 }
 
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+
+header {
+  background-color: #2e3a46;
+}
+
+.logo {
+  width: 55px;
+}
+
+.logo img {
+  width: 100%;
+}
+
 .disc-wrapper {
   display: flex;
   padding-top: 100px;
@@ -15,13 +33,14 @@
 
 .disc-wrapper .disc-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   width: calc(240px * 4);
   margin: auto;
   list-style: none;
 }
 
-.disc-wrapper .disc-list li {
+.disc-wrapper .disc-list .disc {
   width: 200px;
   height: 350px;
   margin: 20px;
@@ -30,16 +49,16 @@
   background-color: #2e3a46;
 }
 
-.disc-wrapper .disc-list li img {
+.disc-wrapper .disc-list .disc img {
   width: 170px;
 }
 
-.disc-wrapper .disc-list li h4 {
+.disc-wrapper .disc-list .disc h4 {
   margin: 15px 0;
   color: #fff;
 }
 
-.disc-wrapper .disc-list li p {
+.disc-wrapper .disc-list .disc p {
   color: #666666;
 }
 

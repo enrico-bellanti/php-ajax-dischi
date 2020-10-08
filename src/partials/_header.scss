@@ -1,0 +1,10 @@
+header{
+  background-color: #2e3a46;
+}
+
+.logo{
+  width: 55px;
+  & img{
+    width: 100%;
+  }
+}
