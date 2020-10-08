@@ -1,3 +1,5 @@
+<?php include "db.php" ; ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -20,26 +22,18 @@
     <main>
       <div class="disc-wrapper">
         <ul class="disc-list">
-
+          <?php foreach ($database as $cd) { ?>
+          <li class="disc">
+            <img src="<?php echo($cd["poster"]); ?>" alt="">
+            <h4><?php echo(strtoupper($cd["title"])); ?></h4>
+            <p><?php echo($cd["author"]); ?></p>
+            <p><?php echo($cd["year"]); ?></p>
+          </li>
+        <?php } ?>
         </ul>
       </div>
     </main>
     <!-- /vetrina dischi -->
-
-    <footer></footer>
-
-    <!-- TEMPLATES -->
-    <script id="cd-template" type="text/x-handlebars-template">
-      <li class="disc">
-        <img src="{{poster}}" alt="">
-        <h4>{{title}}</h4>
-        <p>{{author}}</p>
-        <p>{{year}}</p>
-      </li>
-    </script>
-
-    <!-- TEMPLATES -->
-
-    <script src="dist/app.js" charset="utf-8"></script>
+    
   </body>
 </html>

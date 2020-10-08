@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/enrico-bellanti/php-ajax-dischi#readme",
   "dependencies": {
+    "handlebars": "^4.7.6",
+    "jquery": "^3.5.1",
     "laravel-mix": "^5.0.5"
   },
   "devDependencies": {

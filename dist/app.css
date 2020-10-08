@@ -18,7 +18,8 @@ header {
 }
 
 .logo {
-  width: 55px;
+  width: 50px;
+  padding: 7px 0;
 }
 
 .logo img {
