@@ -1,7 +1,7 @@
 .disc-wrapper{
   display: flex;
   padding-top: 100px;
-  background-color: #1e2d3b;
+  background-color: $blue;
   .disc-list{
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
       margin: 20px;
       padding: 15px;
       text-align: center;
-      background-color: #2e3a46;
+      background-color: $grey;
       & img{
         width: 170px;
       }
@@ -24,7 +24,7 @@
         color: #fff;
       }
       & p{
-        color: #666666;
+        color: $greylight;
       }
     }
   }

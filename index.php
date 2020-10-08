@@ -5,8 +5,6 @@
   <head>
     <meta charset="utf-8">
     <title>Discs</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <link rel="stylesheet" href="dist/app.css">
   </head>
   <body>
@@ -27,7 +25,7 @@
           <?php foreach ($database as $cd) { ?>
           <li class="disc">
             <img src="<?php echo($cd["poster"]); ?>" alt="">
-            <h4><?php echo($cd["title"]); ?></h4>
+            <h4><?php echo(strtoupper($cd["title"])); ?></h4>
             <p><?php echo($cd["author"]); ?></p>
             <p><?php echo($cd["year"]); ?></p>
           </li>
@@ -36,6 +34,6 @@
       </div>
     </main>
     <!-- /vetrina dischi -->
-
+    <script src="src/app.js" charset="utf-8"></script>
   </body>
 </html>
