@@ -1,4 +1,4 @@
-<?php include "db.php" ; ?>
+<?php include "db.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,6 +34,6 @@
       </div>
     </main>
     <!-- /vetrina dischi -->
-    
+
   </body>
 </html>

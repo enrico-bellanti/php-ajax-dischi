@@ -1,13 +1,14 @@
 .disc-wrapper{
   display: flex;
-  padding-top: 100px;
+  min-height: 100vh;
+  padding-top: 60px;
   background-color: $blue;
   .disc-list{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: calc(240px * 4);
-    margin: auto;
+    margin: 0 auto;
     list-style: none;
     & .disc{
       width: 200px;

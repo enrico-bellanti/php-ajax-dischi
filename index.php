@@ -12,6 +12,10 @@
         <div class="logo">
           <img src="img/1200px-Spotify_logo_without_text.svg.webp" alt="">
         </div>
+        <select id="select-author" name="">
+          <option value="0">All Authors</option>
+
+        </select>
       </div>
     </header>
     <!-- /HEADER -->
@@ -30,13 +34,19 @@
 
     <!-- TEMPLATES -->
     <script id="cd-template" type="text/x-handlebars-template">
-      <li class="disc">
+      <li class="disc" data-author="{{id_author}}">
         <img src="{{poster}}" alt="">
         <h4>{{title}}</h4>
         <p>{{author}}</p>
         <p>{{year}}</p>
       </li>
     </script>
+
+    <!-- template select options -->
+    <script id="option-template" type="text/x-handlebars-template">
+      <option value="{{id_author}}">{{author}}</option>
+    </script>
+    <!-- /template select options -->
 
     <!-- TEMPLATES -->
 

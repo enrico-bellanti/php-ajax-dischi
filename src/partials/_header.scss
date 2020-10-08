@@ -1,5 +1,10 @@
 header{
   background-color: #2e3a46;
+  & .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .logo{
