@@ -1,8 +1,6 @@
 const $ = require("jquery");
 const Handlebars = require("handlebars");
 
-
-
 $(document).ready(function() {
 
   $.ajax(
@@ -10,7 +8,7 @@ $(document).ready(function() {
       "url":"http://localhost/exercise/php-ajax-dischi/server.php",
       "method":"GET",
       "success":function (discs) {
-        renderCds(discs, "all");
+        renderCds(discs);
         renderSelect(discs);
       },
       "error":function (err) {
@@ -25,9 +23,12 @@ $(document).ready(function() {
     $.ajax(
       {
         "url":"http://localhost/exercise/php-ajax-dischi/server.php",
+        "data": {
+          "author": authorVal
+        },
         "method":"GET",
         "success":function (discs) {
-          renderCds(discs, authorVal)
+          renderCds(discs)
         },
         "error":function (err) {
           alert("E avvenuto un errore. "+ err);
@@ -35,10 +36,11 @@ $(document).ready(function() {
     });
   });
 
+
 });
 
 // FUNCTIONS
-function renderCds(results, filter) {
+function renderCds(results) {
   for (var i = 0; i < results.length; i++) {
     // template dei CDs
     var source = $("#cd-template").html();
@@ -50,18 +52,19 @@ function renderCds(results, filter) {
       "year": results[i]["year"],
       "poster": results[i]["poster"]
     };
-    // condizione filtro
-    if (filter == results[i]["author"] || filter == "all") {
+
       // appendo cds
       var html = cdTemplate(context);
       $(".disc-list").append(html);
-    }
   }
 }
 
 function renderSelect(results) {
+  var authors = [];
+
   for (var i = 0; i < results.length; i++) {
-    // template select
+    if (!authors.includes(results[i]["author"])) {
+          // template select
     var source = $("#option-template").html();
     var optionTemplate = Handlebars.compile(source);
     var context = {
@@ -70,6 +73,9 @@ function renderSelect(results) {
     // appendo select options
     var html = optionTemplate(context);
     $("#select-author").append(html);
+    authors.push(results[i]["author"]);
+    }
+
   }
 }
 

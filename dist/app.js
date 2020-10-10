@@ -16096,7 +16096,7 @@ $(document).ready(function () {
     "url": "http://localhost/exercise/php-ajax-dischi/server.php",
     "method": "GET",
     "success": function success(discs) {
-      renderCds(discs, "all");
+      renderCds(discs);
       renderSelect(discs);
     },
     "error": function error(err) {
@@ -16108,9 +16108,12 @@ $(document).ready(function () {
     resetResults();
     $.ajax({
       "url": "http://localhost/exercise/php-ajax-dischi/server.php",
+      "data": {
+        "author": authorVal
+      },
       "method": "GET",
       "success": function success(discs) {
-        renderCds(discs, authorVal);
+        renderCds(discs);
       },
       "error": function error(err) {
         alert("E avvenuto un errore. " + err);
@@ -16119,7 +16122,7 @@ $(document).ready(function () {
   });
 }); // FUNCTIONS
 
-function renderCds(results, filter) {
+function renderCds(results) {
   for (var i = 0; i < results.length; i++) {
     // template dei CDs
     var source = $("#cd-template").html();
@@ -16130,27 +16133,29 @@ function renderCds(results, filter) {
       "author": results[i]["author"],
       "year": results[i]["year"],
       "poster": results[i]["poster"]
-    }; // condizione filtro
+    }; // appendo cds
 
-    if (filter == results[i]["author"] || filter == "all") {
-      // appendo cds
-      var html = cdTemplate(context);
-      $(".disc-list").append(html);
-    }
+    var html = cdTemplate(context);
+    $(".disc-list").append(html);
   }
 }
 
 function renderSelect(results) {
-  for (var i = 0; i < results.length; i++) {
-    // template select
-    var source = $("#option-template").html();
-    var optionTemplate = Handlebars.compile(source);
-    var context = {
-      "author": results[i]["author"]
-    }; // appendo select options
+  var authors = [];
 
-    var html = optionTemplate(context);
-    $("#select-author").append(html);
+  for (var i = 0; i < results.length; i++) {
+    if (!authors.includes(results[i]["author"])) {
+      // template select
+      var source = $("#option-template").html();
+      var optionTemplate = Handlebars.compile(source);
+      var context = {
+        "author": results[i]["author"]
+      }; // appendo select options
+
+      var html = optionTemplate(context);
+      $("#select-author").append(html);
+      authors.push(results[i]["author"]);
+    }
   }
 } // funzione per resettare la ricerca
 

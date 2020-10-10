@@ -28,6 +28,7 @@
             <h4><?php echo(strtoupper($cd["title"])); ?></h4>
             <p><?php echo($cd["author"]); ?></p>
             <p><?php echo($cd["year"]); ?></p>
+
           </li>
         <?php } ?>
         </ul>
