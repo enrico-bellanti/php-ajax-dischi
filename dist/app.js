@@ -16103,7 +16103,7 @@ $(document).ready(function () {
       alert("E avvenuto un errore. " + err);
     }
   });
-  $("#select-author").change(function () {
+  $("#select-author").trigger(function () {
     var authorVal = $(this).val();
     resetResults();
     $.ajax({
