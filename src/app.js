@@ -17,7 +17,7 @@ $(document).ready(function() {
   });
 
 
-  $("#select-author").trigger(function() {
+  $("#select-author").change(function() {
     var authorVal = $(this).val();
     resetResults();
     $.ajax(
